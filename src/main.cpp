@@ -39,7 +39,7 @@ int totalEnergy(std::vector<int> gridSize)
 int main()
 {
     // first initialize the grid
-    std::vector<int> gridSize{4, 4, 4};
+    std::vector<int> gridSize{40, 40, 40};
     randomInitialization(gridSize);
 
     // then set the temperature
@@ -47,14 +47,13 @@ int main()
     std::cout << totalEnergy(gridSize) << std::endl;
 
     // then start the simulation
-    for (int i = 0; i < 40; ++i)
+    for (int i = 0; i < 400; ++i)
     {
         reduceEnergy();
     }
 
+    printSpins(gridSize);
     std::cout << totalEnergy(gridSize) << std::endl;
-
-    printSpins(gridSize); 
 
     return 0;
 }
